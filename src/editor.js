@@ -573,11 +573,13 @@ function createHTML(options = {}) {
                 var text = (e.originalEvent || e).clipboardData.getData('text/plain');
 
                 ${pasteListener} && postAction({type: 'CONTENT_PASTED', data: text});
+                // cancel paste
+                e.preventDefault();
+                // insert text manually
                 if (${pasteAsPlainText}) {
-                    // cancel paste
-                    e.preventDefault();
-                    // insert text manually
                     exec("insertText", text);
+                } else {
+                    exec("insertHTML", text);
                 }
             });
             addEventListener(content, 'compositionstart', function(event){
