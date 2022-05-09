@@ -44,6 +44,9 @@ function getDefaultIcon() {
     texts[actions.blockquote] = require('../img/blockquote.png');
     texts[actions.line] = require('../img/line.png');
     texts[actions.fontSize] = require('../img/fontSize.png');
+    // added
+    texts[actions.heading2] = require('../img/heading2.png');
+    texts[actions.setParagraph] = require('../img/paragraph.png');
     return texts;
 }
 
